@@ -1,6 +1,15 @@
 <br>
 <br>
 <h1>SHOW LIST</h1>
-<%= @lists.each do |list| %>
-  <%= <%= link_to list.name, list_path(list) %> %>
-<%= end %>
+<% @list.bookmarks.each do |bookmark| %>
+  <li class="list-group-item">
+  <%= bookmark.comment %>
+  </li>
+   <li class="list-group-item">
+  <%= bookmark.movie.title%>
+  </li>
+<% end %>
+
+
+<%= link_to "Add a new bookmark", new_list_bookmark_path(@list), class: 'btn btn-primary' %>
+<%= link_to "Go to my lists", lists_path, class: 'btn btn-primary' %>
