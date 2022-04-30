@@ -2,5 +2,5 @@
 <br>
 <h1>SHOW LIST</h1>
 <%= @lists.each do |list| %>
-  <%= <%= link_to list.title, list_path(list) %> %>
+  <%= <%= link_to list.name, list_path(list) %> %>
 <%= end %>
