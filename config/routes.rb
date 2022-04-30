@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   # get 'lists/new', to: 'lists#new'
   # get 'lists/:id', to: 'lists#show', as: :list_show
   # post 'lists', to: 'lists#create'
-  resources :lists, only: %i[index show new create]
+  resources :lists, only: %i[index show new create] do
+    resources :bookmarks, only: %i[new create]
+  end
+  resources :bookmarks, only: [:destroy]
 end

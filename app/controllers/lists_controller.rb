@@ -4,12 +4,12 @@ class ListsController < ApplicationController
     @lists = List.all
   end
 
-  def show
-    @list = List.find(params[:id])
-  end
-
   def new
     @list = List.new
+  end
+
+  def show
+    @list = List.find(params[:id])
   end
 
   def create
@@ -17,7 +17,7 @@ class ListsController < ApplicationController
     if @list.save
       redirect_to list_path(@list)
     else
-      render "new"
+      render 'new'
     end
   end
 end
