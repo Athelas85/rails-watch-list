@@ -1,6 +1,7 @@
 <br>
 <br>
 <h1>SHOW LIST</h1>
+<%= cl_image_tag @list.photo.key %>
 <% @list.bookmarks.each do |bookmark| %>
   <li class="list-group-item">
   <%= bookmark.comment %>
